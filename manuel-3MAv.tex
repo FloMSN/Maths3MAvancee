@@ -30,12 +30,15 @@
   {ex1/figures/}%
   {LesVecteurs/figures/}%
   {GeometriePlane/figures/}%
+  {Trigonometrie/figures/}%
+  {Fonctions/figures/}%
+  {FonctionsAffines/figures/}%
   {Images/}%
 }
 
 
 % création d'un nouveau thème "calcul" pour le document
-\NewThema{C}{c}{calcul}{Calcul}{}{PartieFonction}{A3}
+\NewThema{C}{c}{calcul}{Calcul}{CALCUL}{PartieFonction}{A3}
 
 \renewcommand\ListeMethodesThemes{{c}{C},{g}{G}}
 \renewcommand*\StringListeMethode{M\'ethodes du livret 1}
@@ -43,6 +46,7 @@
 % création d'un nouveau thème "Manuel" pour le sommaire
 \NewThema{M}{m}{manuel}{Manuel}{MANUEL}{PartieFonction}{A3}
 
+\pgfplotsset{compat=1.15}
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -70,7 +74,7 @@
 \begin{commentaire}
 
 \textcolor{PartieFonction}{\PrerequisTitleFont 
-Chapitre \ref{ChCalAlgebriques}: Calculs algébriques \dotfill\ page \pageref{ChCalAlgebriques}}
+Chapitre \ref{ChCalculsAlgebriques}: Calculs algébriques \dotfill\ page \pageref{ChCalculsAlgebriques}}
 
 \vspace{2em}
 
@@ -80,17 +84,17 @@ Chapitre \ref{ChLesVecteurs}: Les vecteurs 1 \dotfill\ page \pageref{ChLesVecteu
 \vspace{2em}
 
 \textcolor{PartieFonction}{\PrerequisTitleFont 
-Chapitre \ref{ChLesRacines}: Les racines nièmes \dotfill\ page \pageref{ChLesRacines}}
+Chapitre \ref{ChLesRacines}: Les racines \dotfill\ page \pageref{ChLesRacines}}
 
 \vspace{2em}
 
 \textcolor{PartieFonction}{\PrerequisTitleFont 
-Chapitre \ref{ChEquations}: Les équations \dotfill\ page \pageref{ChLesEquations}}
+Chapitre \ref{ChLesEquations}: Les équations \dotfill\ page \pageref{ChLesEquations}}
 
 \vspace{2em}
 
 \textcolor{PartieGeometrie}{\PrerequisTitleFont 
-Chapitre \ref{ChGeometriePlane}: Géométrie plane \dotfill\ page \pageref{ChGeometriePlane}
+Chapitre \ref{ChGeometriePlane}: Géométrie plane \dotfill\ page \pageref{ChGeometriePlane}}
 
 \vspace{2em}
 
@@ -99,8 +103,18 @@ Chapitre \ref{ChInequations}: Inéquations \dotfill\ page \pageref{ChInequations
 
 \vspace{2em}
 
+\textcolor{PartieGeometrie}{\PrerequisTitleFont 
+Chapitre \ref{ChTrigonometrie}: Trigonométrie dans le triangle rectangle \dotfill\ page \pageref{ChTrigonometrie}}
+
+\vspace{2em}
+
 \textcolor{PartieFonction}{\PrerequisTitleFont 
-Chapitre \ref{ChPerimetresAires}: Nombres entiers et décimaux \dotfill\ page \pageref{ChPerimetresAires}}
+Chapitre \ref{ChFonctions}: Fonctions \dotfill\ page \pageref{ChFonctions}}
+
+\vspace{2em}
+
+\textcolor{PartieFonction}{\PrerequisTitleFont 
+Chapitre \ref{ChFonctionsAffines}: Fonctions Affines \dotfill\ page \pageref{ChFonctionsAffines}}
 
 \vspace{2em}
 
@@ -141,16 +155,10 @@ Chapitre \ref{ChPerimetresAires}: Nombres entiers et décimaux \dotfill\ page \p
 \colorlet{ChapterNumColor}{white}
 \setcounter{chapter}{0}
 
-\themaC
-\themaG
-
-
 \setcounter{page}{6}
 
 \themaC
 \include{CalculsAlgebriques/CalculsAlgebriques}
-
-
 
 \themaG
 \include{LesVecteurs/LesVecteurs}
@@ -167,19 +175,17 @@ Chapitre \ref{ChPerimetresAires}: Nombres entiers et décimaux \dotfill\ page \p
 \themaC
 \include{Inequations/Inequations}
 
+\themaG
+\include{Trigonometrie/Trigonometrie}
 
+\themaC
+\include{Fonctions/Fonctions}
 
-%\themaG
-%\include{Quadrilateres/Quadrilateres}
-
-%\themaC
-%\include{NbsRelatifs/NbsRelatifs}
-
-%\themaG
-%\include{PerimetresAires/PerimetresAires}
+\themaC
+\include{FonctionsAffines/FonctionsAffines}
 
 %\AfficheListeMethodes
-\AfficheCorriges[2]
+%\AfficheCorriges[2]
 %\AfficheLexique
 
 \end{document}
